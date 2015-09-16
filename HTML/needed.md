@@ -209,33 +209,3 @@ var type = function(){
 401 Unauthorized  
 403 Forbidden  
 404 Not Found  
-
-
-
-
-
-#wrap {
-    border: 1px solid #000000;
-    position: absolute;
-    width: 235px;
-    min-height: 50px;
-}
-#wrap .avatar {
-    position: absolute;
-    top: 50%;
-    margin-top: -50px;
-    float: left;
-}
-#wrap p {
-    width: 100px;
-    float: left;
-    top: -89px;
-    left: 66px;
-    margin-left: 118px;
-}
-
-
-
-
-
-
