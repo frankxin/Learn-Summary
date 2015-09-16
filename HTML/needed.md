@@ -201,14 +201,14 @@ var type = function(){
 ##计算机网络
 
 ###HTTP请求状态码
-> 200 OK
-301 永久重定向
-302 暂时重定向 （和301的本质区别在哪）
-304 Not Modified
-400 Bad Request
-401 Unauthorized
-403 Forbidden
-404 Not Found
+> 200 OK  
+301 永久重定向  
+302 暂时重定向 （和301的本质区别在哪）  
+304 Not Modified  
+400 Bad Request  
+401 Unauthorized  
+403 Forbidden  
+404 Not Found  
 
 
 
