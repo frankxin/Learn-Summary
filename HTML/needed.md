@@ -209,3 +209,10 @@ var type = function(){
 401 Unauthorized  
 403 Forbidden  
 404 Not Found  
+
+##网路安全
+
+###CSRF
+http://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html
+
+###XSS

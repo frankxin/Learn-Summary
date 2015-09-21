@@ -21,6 +21,54 @@ O(logn)
 ###栈与递归
 
 ####invert binary trees
+```javascript
+//recursive method
+//node structure
+function treeNode(val, left, right){
+  this.val = val;
+  this.left = left;
+  this.right = right;
+}
+
+var invertTree = function(tree){
+  if(tree && (tree.left || tree.right)){
+    var temp = tree.left;
+    tree.left = invertTree(tree.right);
+    tree.right = invertTree(temp);
+  }else{
+    return null;
+  }
+  return tree
+}
+
+//none-recursive method
+//node structure
+function treeNode(val, left, right){
+  this.val = val;
+  this.left = left;
+  this.right = right;
+}
+
+var invertTree = function(tree){
+  if(tree && (tree.left || tree.right)){
+    var stack = [];
+    stack.push(tree);
+    while(stack.length !== 0){
+      var newTree = stack.pop();
+      
+      var temp = newTree.left;
+      newTree.left = newTree.right;
+      newTree.right = temp;
+      if(newTree.left != null){
+        stack.push(newTree.left);
+      }
+      if(newTree.right != null){
+        stack.push(newTree.right);
+      }
+    }
+  }
+}
+```
 
 ####Fibonacci
 
@@ -30,5 +78,56 @@ O(logn)
 
 ###串，朴素匹配与KMP匹配
 
+###二叉树
 
+####赫夫曼树
+带权路径最小的二叉树
+
+####huffuman编码
+**任何字符的编码都不能是另一字符串的前缀**
+
+###图
+
+####无相完全图
+
+###排序！！！！
+
+####冒泡排序
+####简单排序
+
+####快排
+```javascript
+var fastsort = function(arr,l,r){
+  var i = l,j=r,x = arr[i];
+
+  while(i < j){
+    while(i < j && arr[j]>x){
+      j--
+    }
+    if(i < j){
+      arr[i] = arr[j];
+      i++;
+    }
+
+    while(i<j && arr[i]<=x){
+      i++;
+    }
+    if(i < j){
+      arr[j] = arr[i];
+      j--
+    }
+  }
+
+  arr[i] = x;
+
+  return i;
+}
+var quick_sort1 = function(s, l, r) {
+  if (l < r) {
+    var i = fastsort(s, l, r); //先成挖坑填数法调整s[]  
+    quick_sort1(s, l, i - 1); // 递归调用   
+    quick_sort1(s, i + 1, r);
+  }
+}
+```
 
