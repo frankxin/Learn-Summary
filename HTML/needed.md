@@ -66,6 +66,19 @@ iframe也可以跨域
 }
 ```
 
+###css hack
+Attribute Hack
+```css
+/* IE6 */
+#once { _color: blue }
+/* IE6, IE7 */
+#doce { *color: blue; /* or #color: blue */ }
+/* IE6, IE7, IE8, but also IE9 in some cases :( */
+#diecinueve { color: blue\9; }
+/* IE8, IE9 */
+#anotherone  {color: blue\0/;} /* must go at the END of all rules */
+```
+
 ##Javascript
 
 ###闭包
@@ -197,6 +210,44 @@ var type = function(){
 ```javascript
 
 ```
+
+###常用字符串操作
+####字符方法
+charAt()
+
+####字符操作方法
+concat()
+slice()
+> slice接收两个参数，起始位（计算在内），截止位（不算在内）
+substr()
+> substr接收两个参数，起始位（计算在内），截取字符数目
+substring()
+> substring接收两个参数，起始位（计算在内），截止位（不算在内）
+
+####字符定位方法
+`indexOf("")`
+
+`lastIndexOf("")`
+
+> 一个是从前往后，另一个是从后往前，序号都是从前往后排，第二个参数可以接收开始位置
+
+####字符串的模式匹配方法
+
+
+###常用数组操作
+####栈方法
+push pop
+unshift shift
+####操作方法
+`slice()` 从起点到终点（不算）切下来
+`splice()` 接收n个参数，从哪切，切多少，插入不？
+####迭代方法
+
+###常用数字操作
+
+###正则表达式（匹配和方法）
+
+
 
 ##计算机网络
 
