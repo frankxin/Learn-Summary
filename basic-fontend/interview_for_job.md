@@ -89,7 +89,7 @@ console.log(obj2);
 
 ####react和一些其他框架的经验
 
-##网易（跪了）
+##网易
 
 ####CSRF -- 问题与解决方案
 
@@ -104,3 +104,60 @@ console.log(obj2);
 
 ####移动端点透的问题是怎么回事儿，解决方案，有没有了解过fastclick库是怎么实现的
 
+##小米
+
+1. 请定义这样一个函数
+`function repeat (func, times, wait) {}`
+这个函数能返回一个新函数，比如这样用
+`var repeatedFun = repeat(alert, 10, 5000)`
+调用这个 `repeatedFun ("hellworld")`
+会alert十次 helloworld, 每次间隔5秒
+
+Solution：
+```javascript
+//为什么console.log不行
+function repeat(func, times, wait) {
+  return funcWrap = function(s) {
+    func.call(null, s);
+    var timer = setInterval(function() {
+      func.call(null, s);
+      --times;
+      if (times === 1) {
+        clearInterval(timer);
+      }
+    }, wait)
+  }
+}
+```
+
+2. 写一个函数stringconcat， 要求能
+```javascript
+var result1 = stringconcat("a", "b")  result1 = "a+b"
+var stringconcatWithPrefix = stringconcat.prefix("hellworld");
+var result2 = stringconcatWithPrefix("a", "b")  result2 = "hellworld+a+b"
+```
+
+Solution:
+```javascript
+var toArray = function(){
+  var arrayLike = arguments[0],
+      i,
+      array=[];
+
+  for(i=0;i<arrayLike.length;i++){
+    array.push(arrayLike[i]);
+  }
+
+  return array;
+}
+
+var stringconcat = function(){
+  return toArray(arguments).join('+');
+}
+stringconcat.prefix = function(prefix){
+  return function(){
+
+    return prefix + '+' + toArray(arguments).join('+');
+  }
+}
+```

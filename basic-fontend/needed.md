@@ -83,6 +83,11 @@ Attribute Hack
 
 ###闭包
 
+###difference between function declaration and anonymous function
+
+Function declaration has hoisting , but anonymous function not.
+
+
 ###$(document).ready和window.onload的区别
 **手写一个ready函数**
 
@@ -99,7 +104,6 @@ document.ready = function(callback) {
     }
 }
 ```
-
 
 ###用原生实现get和post
 ```javascript
@@ -143,6 +147,20 @@ xhr.send(null); //null 是必须的，这里模拟的是get请求
 
 ###类数组转化为真实数组的实现
 http://segmentfault.com/a/1190000000415572
+
+```javascript
+function convertToArray(){
+  var nodes = arguments[0],array = [];
+  try {
+    array = Array.prototype.slice(nodes,0);
+  } catch (ex) {
+    for (var i=0, len=nodes.length; i < len; i++){
+      array.push(nodes[i]);
+    }
+  }
+  return array;
+}
+```
 
 
 ###数组去重
@@ -207,21 +225,20 @@ var type = function(){
 }
 ```
 ###JS 操作dom的原生操作
-```javascript
-
-```
+![node](./img/node1.png)
+![node](./img/node2.png)
 
 ###常用字符串操作
 ####字符方法
-charAt()
+`charAt()`
 
 ####字符操作方法
-concat()
-slice()
+`concat()`
+`slice()`
 > slice接收两个参数，起始位（计算在内），截止位（不算在内）
-substr()
+`substr()`
 > substr接收两个参数，起始位（计算在内），截取字符数目
-substring()
+`substring()`
 > substring接收两个参数，起始位（计算在内），截止位（不算在内）
 
 ####字符定位方法
