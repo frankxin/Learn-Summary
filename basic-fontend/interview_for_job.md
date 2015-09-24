@@ -161,3 +161,39 @@ stringconcat.prefix = function(prefix){
   }
 }
 ```
+
+
+##去哪儿
+
+#### 四则运算validator
+
+#### 弹球类似的东西
+
+##小米
+
+** 问的非常全面具体，很多忘了，说说印象最深的几个 **
+
+####缓存策略
+**具体** 怎么设置
+
+####下面代码输出
+```javascript
+
+function f(){
+	this.name = "zhang";
+	this.constructor = function(){
+		this.age = 12
+	}
+}
+var a = new f();
+a.hasOwnProperty('constructor'); //false
+'constructor' in a // true
+
+```
+
+####`Object instanceof Function`和`Function instanceof Object`
+
+####递归和非递归
+
+举个例子，递归快排转非递归快排，或是按层遍历二叉树
+

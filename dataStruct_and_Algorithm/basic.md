@@ -96,6 +96,7 @@ var invertTree = function(tree){
 ####简单排序
 
 ####快排
+递归快排
 ```javascript
 var fastsort = function(arr,l,r){
   var i = l,j=r,x = arr[i];
@@ -131,3 +132,56 @@ var quick_sort1 = function(s, l, r) {
 }
 ```
 
+递归快排转非递归
+```javascript
+/**
+ *  arr is array to sort , 
+ *  l is the first number pointer , 
+ *  r is the last number pointer
+ */
+var fastsort = function(arr, l, r) {
+    var stack = [];
+	
+    stack.push(l);
+    stack.push(r);
+
+    while (stack.length !== 0) {
+
+      var j = stack.pop(),
+        i = stack.pop(),
+        start = i,
+        end = j,
+        x = arr[i];
+
+      while (i < j) {
+
+        while (i < j && arr[j] > x) {
+          j--
+        }
+        if (i < j) {
+          arr[i] = arr[j];
+          i++;
+        }
+
+        while (i < j && arr[i] <= x) {
+          i++;
+        }
+        if (i < j) {
+          arr[j] = arr[i];
+          j--
+        }
+      }
+      arr[i] = x;
+
+      if (start < i - 1) {
+        stack.push(l, i - 1);
+      }
+      if (i + 1 < end) {
+        stack.push(i + 1, r);
+      }
+
+    }
+
+    return arr;
+  }
+```
