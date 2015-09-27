@@ -176,6 +176,10 @@ stringconcat.prefix = function(prefix){
 ####缓存策略
 **具体** 怎么设置
 
+####写个事件触发器
+(模拟事件)
+detail: [Javascript Event System](./javascript_event_system.md)
+
 ####下面代码输出
 ```javascript
 
@@ -192,6 +196,8 @@ a.hasOwnProperty('constructor'); //false
 ```
 
 ####`Object instanceof Function`和`Function instanceof Object`
+
+####原生Ajax上传图片
 
 ####递归和非递归
 

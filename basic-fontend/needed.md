@@ -93,15 +93,19 @@ Function declaration has hoisting , but anonymous function not.
 
 ```javascript
 document.ready = function(callback) {
-    if (document.addEventListener) {
-        document.removeEventListener("DOMContentLoaded", DOMContentLoaded, false);
+  if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded",function(){
+        document.removeEventListener("DOMContentLoaded", arguments.callee , false);
+        callback()
+      })     
+  } else if (document.attachEvent){ //compatible for oldIE
+    document.attachEvent('onreadystatechange',function(){
+      if (document.readyState == "complete") {
+        document.detachEvent("onreadystatechange", arguments.callee);
         callback();
-    } else if (document.readyState === "complete") {
-        // we're here because readyState === "complete" in oldIE
-        // which is good enough for us to call the dom ready!
-        document.detachEvent("onreadystatechange", DOMContentLoaded);
-        callback();
-    }
+      }
+    })
+  }
 }
 ```
 
