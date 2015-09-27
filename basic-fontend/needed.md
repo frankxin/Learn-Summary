@@ -262,7 +262,15 @@ unshift shift
 ####操作方法
 `slice()` 从起点到终点（不算）切下来
 `splice()` 接收n个参数，从哪切，切多少，插入不？
-####迭代方法
+
+####Iterative method
+ECMAscript5 method:  
+/* parma: item , index*/
+every(): If everyone return true , the result is true.  
+filter(): Return the array which is consist of the item return true.  
+forEach():  Run function for every item , no return.  
+map():  Run function for every item , and make a array with return value.   
+some():  any function return true , and the result is true.  
 
 ###常用数字操作
 
