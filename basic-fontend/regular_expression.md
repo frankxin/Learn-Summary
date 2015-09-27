@@ -15,11 +15,9 @@ record in RegExp object as a attribute lastIndex.
  ```javascript
  var ss = "The man hit the ball with the bat ";
     ss += "\nwhile the fielder caught the ball with the glove.";
-
-var pattern = /^while/m; // notice that there is a "^".
-
-var r = ss.replace(pattern , "love"); //Here , the "while" will be replace by "love"
-console.log(r);
+ var pattern = /^while/m; // notice that there is a "^".
+ var r = ss.replace(pattern , "love"); //Here , the "while" will be replace by "love"
+ console.log(r);
  ```
 
 ####Useful method and Something to notice
@@ -27,7 +25,7 @@ console.log(r);
 There are two ways , we can use regular expression . The One is RegExp object , 
 the other one is String object.
 
-** RegExp instance attributes: **
+**RegExp instance attributes:**
 
 1. global: boolean  
 2. ignoreCase: boolean  
@@ -43,9 +41,9 @@ var pattern1 = /\[bc\]at/i;
     console.log(pattern1.lastIndex); //0
     console.log(pattern1.source); //"\[bc\]at"
 ```
-** RegExp instance method: **
+**RegExp instance method:**
 
-1. exec()
+1.exec()
 > From MDN: A RegExp method that executes a search for a match in a string. 
 It returns an array of information.
 
@@ -59,12 +57,12 @@ console.log(outCome_exec);
 outCome_exec = pattern.outCome_exec(someText); //It will search from the lastIndex position this time.
 console.log(outCome_exec);
 ```
-2. test()
+2.test()
 > From MDN: A RegExp method that tests for a match in a string. It returns true or false.
 
-** String instance method: **
+**String instance method:**
 
-1. match()
+1.match()
 
 > From MDN: A String method that executes a search for a match in a string. 
 It returns an array of information or null on a mismatch.  
@@ -77,7 +75,7 @@ var outCome_matc=someText.match(pattern); //["web2.0","net2.0"]
 
 ```
 
-2. replace()
+2.replace()
 
 > From MDN: A String method that executes a search for a match in a string, 
 and replaces the matched substring with a replacement substring.
