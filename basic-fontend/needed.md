@@ -264,8 +264,8 @@ unshift shift
 `splice()` 接收n个参数，从哪切，切多少，插入不？
 
 ####Iterative method
-ECMAscript5 method:  
-/* parma: item , index*/
+**ECMAscript5 method:**
+/* parma: item , index*/  
 every(): If everyone return true , the result is true.  
 filter(): Return the array which is consist of the item return true.  
 forEach():  Run function for every item , no return.  
