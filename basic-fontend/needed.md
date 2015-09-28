@@ -253,7 +253,7 @@ var type = function(){
 > 一个是从前往后，另一个是从后往前，序号都是从前往后排，第二个参数可以接收开始位置
 
 ####字符串的模式匹配方法
-
+[regular expression](./regular_expression.md)  
 
 ###常用数组操作
 ####栈方法
@@ -264,19 +264,19 @@ unshift shift
 `splice()` 接收n个参数，从哪切，切多少，插入不？
 
 ####Iterative method
-**ECMAscript5 method:**
-/* parma: item , index*/  
-every(): If everyone return true , the result is true.  
-filter(): Return the array which is consist of the item return true.  
-forEach():  Run function for every item , no return.  
-map():  Run function for every item , and make a array with return value.   
-some():  any function return true , and the result is true.  
+**ECMAscript5 method:**  
+> /* parma: item , index*/  
+> *every()*: If everyone return true , the result is true.  
+> *filter()*: Return the array which is consist of the item return true.  
+> *forEach()*:  Run function for every item , no return.  
+> *map()*:  Run function for every item , and make a array with return value.   
+> *some()*:  any function return true , and the result is true.  
 
 ###常用数字操作
 
 ###正则表达式（匹配和方法）
 
-
+[regular expression](./regular_expression.md)  
 
 ##计算机网络
 
@@ -294,5 +294,6 @@ some():  any function return true , and the result is true.
 
 ###CSRF
 http://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html
+http://www.ibm.com/developerworks/cn/web/1102_niugang_csrf/
 
 ###XSS
