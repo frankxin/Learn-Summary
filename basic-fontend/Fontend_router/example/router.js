@@ -1,6 +1,6 @@
 //todo: 拦截源URL请求并用自己的navigator方法作为导航
 //todo: History api practice
-//copy from :
+//Inspire from :
 // http://krasimirtsonev.com/blog/article/A-modern-JavaScript-router-in-100-lines-history-api-pushState-hash-url/
 //singleton
 
@@ -21,7 +21,7 @@ var Router = {
     root: '/',
 
     /**
-     * [config description]
+     * [config]
      * @param  {Object} options 
      * Options have two attributes , one is 'mode' ,the other one is 'root'
      * @return {Object} the singleton itself
@@ -46,7 +46,7 @@ var Router = {
     },
 
     /**
-     * [clearSlashes description]
+     * [clearSlashes]
      * @param  {String} path
      * @return {String} 
      * Clear slashes at font and end of the path
@@ -54,7 +54,7 @@ var Router = {
     clearSlashes: function(path) {
         return path.toString().replace(/\/$/, '').replace(/^\//, '');
     },
-    add: function(re, handler) {
+    route: function(re, handler) {
         if(typeof re == 'function') {
             handler = re;
             re = '';
@@ -129,13 +129,13 @@ Router.navigate();
 
 // adding routes
 Router
-.add(/about/, function() {
+.route(/about/, function() {
     console.log('about');
 })
-.add(/products\/(.*)\/edit\/(.*)/, function() {
+.route(/products\/(.*)\/edit\/(.*)/, function() {
     console.log('products', arguments);
 })
-.add(function() {
+.route(function() {
     console.log('default');
 })
 .listen();
