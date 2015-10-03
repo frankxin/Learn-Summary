@@ -1,89 +1,31 @@
-;(function() {
-    function Router() {}
-
-    window.Router = new Router();
-
-    //hash bond method
-    Router.prototype._hashRoute = function(path, callback) {
-        var url = location.hash.slice(1) || '/'
-
-        // 刷新时的处理
-        window.addEventListener('load', function() {
-            if (url == path) {
-                callback && callback()
-            }
-        }, false);
-
-        //hash变化时的处理
-        window.addEventListener('hashchange', function() {
-            url = location.hash.slice(1) || '/'
-            if (url == path) {
-                callback && callback()
-            }
-        }, false);
-
-        //IE Bugfix
-        if ("onhashchange" in window) {
-            return;
-        }
-        setInterval(function() {
-            var newHash = location.hash.slice(1) || '/';
-
-            if (newHash !== url && newHash === path) {
-                url = newHash
-                callback && callback();
-            }
-
-        }, 100)
-    }
-
-    // //History api method
-    // Router.prototype._historyRouter = function(path, callback){
-    //     var url = Util.clearSlashes(location.pathname)
-
-
-    // }
-    
-    Router.prototype.api = {
-        router : this._hashRoute
-    }
-
-    //helper
-    var Util = {
-        /**
-         * [clearSlashes] clear the slash at font and end
-         * @param  {String} path [url]
-         * @return {String}      [url]
-         */
-        clearSlashes: function(path) {
-            return path.toString().replace(/\/$/, '').replace(/^\//, '')
-        }
-    }
-
-})();
-
-//Test case
-Router.api.route('page', function() {
-    alert('page loaded');
-    $.ajax({
-        url: './section.html',
-        type: 'get'
-    }).success(function(el) {
-        alert('get it');
-        console.log(el);
-    }).fail(function() {
-        alert('not find');
-    })
-})
-
+//todo: 拦截源URL请求并用自己的navigator方法作为导航
 //todo: History api practice
-// copy from :
+//copy from :
 // http://krasimirtsonev.com/blog/article/A-modern-JavaScript-router-in-100-lines-history-api-pushState-hash-url/
+//singleton
 
 var Router = {
+
     routes: [],
+
+    /**
+     * [mode] mode is use history api or hash bond
+     * @type {String}
+     */
     mode: null,
+
+    /**
+     * [root] root is which position you begin with.
+     * @type {String}
+     */
     root: '/',
+
+    /**
+     * [config description]
+     * @param  {Object} options 
+     * Options have two attributes , one is 'mode' ,the other one is 'root'
+     * @return {Object} the singleton itself
+     */
     config: function(options) {
         this.mode = options && options.mode && options.mode == 'history' 
                     && !!(history.pushState) ? 'history' : 'hash';
@@ -102,6 +44,13 @@ var Router = {
         }
         return this.clearSlashes(fragment);
     },
+
+    /**
+     * [clearSlashes description]
+     * @param  {String} path
+     * @return {String} 
+     * Clear slashes at font and end of the path
+     */
     clearSlashes: function(path) {
         return path.toString().replace(/\/$/, '').replace(/^\//, '');
     },
@@ -122,12 +71,18 @@ var Router = {
         }
         return this;
     },
+
+    /**
+     * [flush] flush it(clear it)!
+     * @return {Object} the singleton instance
+     */
     flush: function() {
         this.routes = [];
         this.mode = null;
         this.root = '/';
         return this;
     },
+
     check: function(f) {
         var fragment = f || this.getFragment();
         for(var i=0; i<this.routes.length; i++) {
@@ -140,6 +95,7 @@ var Router = {
         }
         return this;
     },
+
     listen: function() {
         var self = this;
         var current = self.getFragment();
@@ -182,7 +138,7 @@ Router
 .add(function() {
     console.log('default');
 })
-.check('/products/12/edit/22').listen();
+.listen();
 
 // forwarding
 Router.navigate('/about');
