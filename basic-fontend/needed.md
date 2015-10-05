@@ -1,5 +1,5 @@
 * [HTML](#html)
-  * [link and @import](#link-and-import)
+  * [link and @import]
   * [Solve new html5 tag browser compatitable](#solve-new-html5-tag-browser-compatitable)
   * iframe常用使用场景与iframe的通信
   * [cookies，sessionStorage 和 localStorage](#storage)
