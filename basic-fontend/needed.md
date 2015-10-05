@@ -1,5 +1,5 @@
 * [HTML](#html)
-  * [link与@import](#link与@import)
+  * [link and @import](#link-and-@import)
   * [解决HTML5新标签的浏览器兼容问题](#解决HTML5新标签的浏览器兼容问题)
   * iframe常用使用场景与iframe的通信
   * [cookies，sessionStorage 和 localStorage](#storage)
@@ -32,10 +32,10 @@
   * [CSRF](#csrf)
   * [XSS](#xss)
 
-##<span id="html">HTML</span>  
+##HTML
 
 
-###<span id="linkandimport">link与@import</span>
+###link and @import
 
 link是HTML标签，@import是css定义的引用依赖的标志。
 
