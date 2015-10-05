@@ -1,6 +1,6 @@
 * [HTML](#html)
-  * [link and @import](#link-and-@import)
-  * [解决HTML5新标签的浏览器兼容问题](#解决HTML5新标签的浏览器兼容问题)
+  * [link and @import](#link-and-import)
+  * [Solve new html5 tag browser compatitable](#solve-new-html5-tag-browser-compatitable)
   * iframe常用使用场景与iframe的通信
   * [cookies，sessionStorage 和 localStorage](#storage)
   * [同源策略](#origin)
