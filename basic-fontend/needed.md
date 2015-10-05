@@ -1,7 +1,7 @@
 * [HTML](#html)
-  * [link与@import](#linkandimport)
-  * [解决HTML5新标签的浏览器兼容问题](#html5label)
-  * [iframe常用使用场景与iframe的通信](#iframe)
+  * [link与@import](#link与@import)
+  * [解决HTML5新标签的浏览器兼容问题](#解决HTML5新标签的浏览器兼容问题)
+  * iframe常用使用场景与iframe的通信
   * [cookies，sessionStorage 和 localStorage](#storage)
   * [同源策略](#origin)
   * [解决跨域](#crossdomain)
