@@ -1,9 +1,8 @@
 * [HTML](#html)
-  * ##link and @import
-  * [Solve new html5 tag browser compatitable](#solve-new-html5-tag-browser-compatitable)
-  * [[解决HTML5新标签的浏览器兼容问题|解决HTML5新标签的浏览器兼容问题]]
-  * iframe常用使用场景与iframe的通信
-  * [cookies，sessionStorage 和 localStorage](#storage)
+  * [link and @import](#link-and-import)
+  * [Solve the problem of HTML5 new label browser compatibility](#solve the problem of HTML5 new label browser compatibility)
+  * [Iframe communication](#iframe communication)
+  * [cookies，sessionStorage and localStorage](#cookies-sessionStorage-and-localStorage)
   * [同源策略](#origin)
   * [解决跨域](#crossdomain)
   
@@ -40,13 +39,13 @@
 
 link是HTML标签，@import是css定义的引用依赖的标志。
 
-###解决HTML5新标签的浏览器兼容问题
+###Solve the problem of HTML5 new label browser compatibility
 
 HTML5shive
 
-###iframe常用使用场景与iframe的通信
+###Iframe communication
 
-###cookies，sessionStorage 和 localStorage
+###cookies，sessionStorage and localStorage
 
 ###同源策略
 
