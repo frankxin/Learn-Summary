@@ -1,6 +1,6 @@
 * [HTML](#html)
   * [link and @import](#link-and-import)
-  * [Solve the problem of HTML5 new label browser compatibility](#solve the problem of HTML5 new label browser compatibility)
+  * [Solve the problem of HTML5 new label browser compatibility](#solve-the-problem-of-HTML5-new-label-browser-compatibility)
   * [Iframe communication](#iframe communication)
   * [cookies，sessionStorage and localStorage](#cookies-sessionStorage-and-localStorage)
   * [同源策略](#origin)
