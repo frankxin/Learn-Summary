@@ -10,9 +10,11 @@
     <div id="wrap">
       <h2>Todo</h2>
       <div id="main-wrap" ng-controller="todoListControler as todoList">
+        <a href="" ng-click="todoList.archive()">archive</a>
         <ul>
           <li ng-repeat="todo in todoList.todos">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}" ng-click="todoList.changeText()">{{todo.text}}</span>
           </li>
         </ul>
         <span></span>
@@ -20,6 +22,7 @@
           <input type="text" ng-model="todoList.newTodoText" placeholder="write your todo here"/>
           <input class="btn-primary" type="submit" value="add">
         </form>
+        <span class="sum">{{todoList.remaining()}}</span>left
       </div>
     </div>
 
