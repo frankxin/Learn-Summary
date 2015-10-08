@@ -296,8 +296,8 @@ var type = function(){
 push pop
 unshift shift
 ####操作方法
-`slice()` 从起点到终点（不算）切下来
-`splice()` 接收n个参数，从哪切，切多少，插入不？
+`slice()` 从起点到终点（不算）切下来 ， 无副作用
+`splice()` 接收n个参数，从哪切，切多少，插入不？有副作用
 
 ####Iterative method
 **ECMAscript5 method:**  
