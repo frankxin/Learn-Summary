@@ -7,7 +7,7 @@ Models can be created by extending `Backbone.Model`
 ```javascript
 var Todo = Backbone.Model.extend({})
 ```
-* **initialize()**
+* **initialize()**  
 The initialize() method is called when a new instance of a model is created
 ```javascript
 var Todo = Backbone.Model.extend({
@@ -17,7 +17,7 @@ var Todo = Backbone.Model.extend({
 })
 ```
 
-* **Default values**
+* **Default values**  
 
 To defined some default data
 
@@ -30,7 +30,7 @@ var Todo = Backbone.Model.extend({
 });
 ```
 
-* **Getter and Setters**
+* **Getter and Setters**  
 
 Model.get  
 
@@ -47,3 +47,25 @@ var todo1 = new Todo({
 })
 todo1.get('text') // get 'work'
 ```
+
+* **Model.toJSON()**
+
+* **Model.set()**
+
+* **Listen to change for your model**
+
+* **validation**
+
+##View
+
+View can be created by extending `Backbone.View.extend({})`
+
+* **el**  
+
+To minimize the num of reflows and repaints
+
+* **render()**
+
+* **Event hash**
+
+##Collections
