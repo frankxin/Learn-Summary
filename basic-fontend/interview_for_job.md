@@ -42,8 +42,7 @@
 		<div class="avatar">
 		<img width="100px" src="https://avatars3.githubusercontent.com/u/4299420?v=3&s=460"/>    
 		</div>
-		<p>what a bright day and can you give me a favor?</p>
-		
+		<p>what a bright day and can you give me a favor?</p>	
 	</div>
 	</body>
 </html>

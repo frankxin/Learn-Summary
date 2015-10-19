@@ -264,6 +264,7 @@ var type = function(){
   return class2type[type]
 }
 ```
+
 ###JS 操作dom的原生操作
 ![node](./img/node1.png)
 ![node](./img/node2.png)
@@ -274,11 +275,17 @@ var type = function(){
 
 ####字符操作方法
 `concat()`
+
 `slice()`
+
 > slice接收两个参数，起始位（计算在内），截止位（不算在内）
+
 `substr()`
+
 > substr接收两个参数，起始位（计算在内），截取字符数目
+
 `substring()`
+
 > substring接收两个参数，起始位（计算在内），截止位（不算在内）
 
 ####字符定位方法
@@ -305,7 +312,7 @@ unshift shift
 > *every()*: If everyone return true , the result is true.  
 > *filter()*: Return the array which is consist of the item return true.  
 > *forEach()*:  Run function for every item , no return.  
-> *map()*:  Run function for every item , and make a array with return value.   
+> *map()*:  Run function for every item , and make a array with return value.  
 > *some()*:  any function return true , and the result is true.  
 
 ###常用数字操作
